@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Mali Design Tokens */
+  --mali-emerald:         #1a3d2e;
+  --mali-emerald-mid:     #2d5a42;
+  --mali-emerald-light:   #3d7a59;
+  --mali-emerald-muted:   #e8f2ec;
+  --mali-emerald-subtle:  #f2f8f4;
+
+  --mali-gold:            #b8922a;
+  --mali-gold-light:      #f0e4c4;
+  --mali-gold-muted:      #faf5ea;
+
+  --mali-slate-900:       #0f1a14;
+  --mali-slate-800:       #1c2b21;
+  --mali-slate-700:       #2e4035;
+  --mali-slate-600:       #4a6358;
+  --mali-slate-500:       #638070;
+  --mali-slate-400:       #7d9c8a;
+  --mali-slate-300:       #adc3b5;
+  --mali-slate-200:       #c8d8ce;
+  --mali-slate-100:       #e4eeea;
+  --mali-slate-50:        #f5f9f6;
+
+  --mali-white:           #ffffff;
+  --mali-positive:        #1a7a45;
+  --mali-positive-bg:     #eaf5ee;
+  --mali-negative:        #8b2020;
+  --mali-negative-bg:     #fceaea;
+  --mali-warning:         #8a5a00;
+  --mali-warning-bg:      #fdf3dc;
+
+  /* Typography */
+  --font-display:  'Playfair Display', Georgia, serif;
+  --font-body:     'DM Sans', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: var(--font-body);
+  background: var(--mali-slate-50);
+  color: var(--mali-slate-900);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--mali-slate-200); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--mali-slate-300); }
+
+/* Typography Utilities */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+
+/* Mali Card */
+.mali-card {
+  background: var(--mali-white);
+  border: 1px solid var(--mali-slate-100);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* Change badges */
+.badge-up {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--mali-positive-bg);
+  color: var(--mali-positive);
+}
+
+.badge-down {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--mali-negative-bg);
+  color: var(--mali-negative);
+}
+
+.badge-neutral {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--mali-slate-100);
+  color: var(--mali-slate-600);
+}
