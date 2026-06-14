@@ -53,7 +53,7 @@ export default function SpendingBreakdown() {
   const totalSpend = spendingByCategory.reduce((s, c) => s + c.amount, 0);
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+    <div className="mali-spending-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
 
       {/* Donut + category list */}
       <div className="mali-card">

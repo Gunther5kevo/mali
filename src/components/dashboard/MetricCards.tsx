@@ -41,9 +41,18 @@ export default function MetricCards({ summary }: MetricCardsProps) {
   ];
 
   const badgeStyles = {
-    up: { background: "var(--mali-positive-bg)", color: "var(--mali-positive)" },
-    down: { background: "var(--mali-negative-bg)", color: "var(--mali-negative)" },
-    neutral: { background: "var(--mali-emerald-muted)", color: "var(--mali-emerald-mid)" },
+    up: {
+      background: "var(--mali-positive-bg)",
+      color: "var(--mali-positive)",
+    },
+    down: {
+      background: "var(--mali-negative-bg)",
+      color: "var(--mali-negative)",
+    },
+    neutral: {
+      background: "var(--mali-emerald-muted)",
+      color: "var(--mali-emerald-mid)",
+    },
     info: { background: "#f0f4ff", color: "#3a5fa0" },
   };
 
@@ -56,6 +65,7 @@ export default function MetricCards({ summary }: MetricCardsProps) {
 
   return (
     <div
+      className="mali-metric-grid"
       style={{
         display: "grid",
         gridTemplateColumns: "repeat(4, 1fr)",

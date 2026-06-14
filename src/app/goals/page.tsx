@@ -16,7 +16,7 @@ export default function GoalsPage() {
     <>
       <Topbar title="Goals & Planning" subtitle="Track progress toward your financial targets" />
 
-      <div style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
+      <div className="mali-page-content" style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
 
         {/* Add goal button row */}
         <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 16 }}>

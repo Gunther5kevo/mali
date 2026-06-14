@@ -44,7 +44,7 @@ const typeDescriptions: Record<InvestmentType, string> = {
 
 export default function InvestmentCards() {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 20 }}>
+    <div className="mali-cards-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 20 }}>
       {investments.map((inv) => {
         const isUp = inv.gainLoss >= 0;
         const colors = typeColors[inv.type];

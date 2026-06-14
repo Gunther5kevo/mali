@@ -37,7 +37,7 @@ const statusConfig = {
 
 export default function GoalCards() {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14, marginBottom: 20 }}>
+    <div className="mali-goal-cards" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14, marginBottom: 20 }}>
       {goals.map((goal) => {
         const cfg    = categoryConfig[goal.category];
         const status = statusConfig[goal.status];

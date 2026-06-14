@@ -13,7 +13,7 @@ export default function SACCOsPage() {
   return (
     <>
       <Topbar title="SACCO Portfolio" subtitle="Stima SACCO · SASRA regulated" />
-      <div style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
+      <div className="mali-page-content" style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
 
         <div
           style={{

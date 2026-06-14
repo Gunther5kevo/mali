@@ -11,7 +11,7 @@ export default function TransactionsPage() {
   return (
     <>
       <Topbar title="Transactions" subtitle="All accounts · June 2026" />
-      <div style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
+      <div className="mali-page-content" style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
 
         <div
           style={{

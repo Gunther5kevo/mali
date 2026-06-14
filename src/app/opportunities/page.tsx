@@ -39,7 +39,7 @@ export default function OpportunitiesPage() {
     <>
       <Topbar title="Opportunities" subtitle="Discover and compare investment options" />
 
-      <div style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
+      <div className="mali-page-content" style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
 
         <OpportunitiesBanner />
 

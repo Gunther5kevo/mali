@@ -60,7 +60,7 @@ export default function OpportunityCards({ opportunities, comparing, onToggleCom
   }
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14, marginBottom: 20 }}>
+    <div className="mali-opp-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14, marginBottom: 20 }}>
       {opportunities.map((opp) => {
         const colors      = typeColors[opp.type];
         const risk        = riskConfig[opp.riskLevel];

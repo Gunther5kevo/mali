@@ -17,7 +17,7 @@ export default function ForecastingPage() {
     <>
       <Topbar title="Wealth Forecasting" subtitle="Model your financial future across different scenarios" />
 
-      <div style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
+      <div className="mali-page-content" style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
 
         <div style={{ marginBottom: 4 }}>
           <div style={{ fontSize: 11, fontWeight: 500, textTransform: "uppercase", letterSpacing: "1.2px", color: "var(--mali-slate-400)", marginBottom: 10 }}>

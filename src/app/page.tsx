@@ -12,36 +12,22 @@ export default function DashboardPage() {
   return (
     <>
       <Topbar title="Good morning, David" />
-      <div style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
+      <div className="mali-page-content" style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
+
         <NetWorthBanner summary={dashboardSummary} />
         <MetricCards summary={dashboardSummary} />
 
-        {/* Charts row */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 340px",
-            gap: 16,
-            marginBottom: 16,
-          }}
-        >
+        <div className="mali-chart-row" style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: 16, marginBottom: 16 }}>
           <NetWorthChart />
           <AssetAllocation />
         </div>
 
-        {/* Insights + Transactions + Goals */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
-            gap: 16,
-            marginBottom: 24,
-          }}
-        >
+        <div className="mali-three-col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginBottom: 24 }}>
           <FinancialInsights />
           <RecentTransactions />
           <GoalsProgress />
         </div>
+
       </div>
     </>
   );

@@ -28,7 +28,7 @@ const scenarioStyles: Record<ScenarioKey, { activeBg: string; activeLabel: strin
 
 export default function ScenarioSelector({ active, onChange }: ScenarioSelectorProps) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 20 }}>
+    <div className="mali-scenario-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 20 }}>
       {(Object.keys(scenarios) as ScenarioKey[]).map((key) => {
         const s        = scenarios[key];
         const style    = scenarioStyles[key];

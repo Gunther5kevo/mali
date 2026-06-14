@@ -20,7 +20,7 @@ export default function AccountsPage() {
   return (
     <>
       <Topbar title="Accounts" subtitle={`${accounts.length} connected accounts`} />
-      <div style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
+      <div className="mali-page-content" style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
 
         <AccountsBanner />
 

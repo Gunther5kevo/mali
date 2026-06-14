@@ -21,7 +21,7 @@ export default function ForecastMilestones({ scenario }: ForecastMilestonesProps
   const cfg        = scenarios[scenario];
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+    <div className="mali-milestones-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
 
       {/* Key stats */}
       <div className="mali-card">

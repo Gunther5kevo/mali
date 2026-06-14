@@ -2,17 +2,14 @@
 @import "tailwindcss";
 
 :root {
-  /* Mali Design Tokens */
   --mali-emerald:         #1a3d2e;
   --mali-emerald-mid:     #2d5a42;
   --mali-emerald-light:   #3d7a59;
   --mali-emerald-muted:   #e8f2ec;
   --mali-emerald-subtle:  #f2f8f4;
-
   --mali-gold:            #b8922a;
   --mali-gold-light:      #f0e4c4;
   --mali-gold-muted:      #faf5ea;
-
   --mali-slate-900:       #0f1a14;
   --mali-slate-800:       #1c2b21;
   --mali-slate-700:       #2e4035;
@@ -23,7 +20,6 @@
   --mali-slate-200:       #c8d8ce;
   --mali-slate-100:       #e4eeea;
   --mali-slate-50:        #f5f9f6;
-
   --mali-white:           #ffffff;
   --mali-positive:        #1a7a45;
   --mali-positive-bg:     #eaf5ee;
@@ -31,20 +27,13 @@
   --mali-negative-bg:     #fceaea;
   --mali-warning:         #8a5a00;
   --mali-warning-bg:      #fdf3dc;
-
-  /* Typography */
-  --font-display:  'Playfair Display', Georgia, serif;
-  --font-body:     'DM Sans', system-ui, sans-serif;
+  --font-display:         'Playfair Display', Georgia, serif;
+  --font-body:            'DM Sans', system-ui, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-html,
-body {
+html, body {
   height: 100%;
   font-family: var(--font-body);
   background: var(--mali-slate-50);
@@ -53,17 +42,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--mali-slate-200); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--mali-slate-300); }
 
-/* Typography Utilities */
 .font-display { font-family: var(--font-display); }
 .font-body    { font-family: var(--font-body); }
 
-/* Mali Card */
 .mali-card {
   background: var(--mali-white);
   border: 1px solid var(--mali-slate-100);
@@ -71,39 +57,76 @@ body {
   overflow: hidden;
 }
 
-/* Change badges */
 .badge-up {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  padding: 2px 8px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 500;
-  background: var(--mali-positive-bg);
-  color: var(--mali-positive);
+  display: inline-flex; align-items: center; gap: 3px;
+  padding: 2px 8px; border-radius: 20px; font-size: 12px; font-weight: 500;
+  background: var(--mali-positive-bg); color: var(--mali-positive);
 }
-
 .badge-down {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  padding: 2px 8px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 500;
-  background: var(--mali-negative-bg);
-  color: var(--mali-negative);
+  display: inline-flex; align-items: center; gap: 3px;
+  padding: 2px 8px; border-radius: 20px; font-size: 12px; font-weight: 500;
+  background: var(--mali-negative-bg); color: var(--mali-negative);
+}
+.badge-neutral {
+  display: inline-flex; align-items: center; gap: 3px;
+  padding: 2px 8px; border-radius: 20px; font-size: 12px; font-weight: 500;
+  background: var(--mali-slate-100); color: var(--mali-slate-600);
 }
 
-.badge-neutral {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  padding: 2px 8px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 500;
-  background: var(--mali-slate-100);
-  color: var(--mali-slate-600);
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+.mali-sidebar-desktop { display: flex !important; flex-direction: column; }
+.mali-menu-btn        { display: none  !important; }
+
+@media (max-width: 768px) {
+  .mali-sidebar-desktop { display: none !important; }
+  .mali-menu-btn        { display: flex !important; }
+
+  main { width: 100% !important; }
+
+  .mali-topbar {
+    padding: 14px 16px 14px 64px !important;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .mali-topbar-actions { display: none !important; }
+
+  .mali-page-content { padding: 16px !important; }
+
+  .mali-banner-stats  { display: none !important; }
+
+  .mali-metric-grid   { grid-template-columns: repeat(2, 1fr) !important; }
+
+  .mali-two-col,
+  .mali-three-col,
+  .mali-chart-row     { grid-template-columns: 1fr !important; }
+
+  .mali-cards-grid    { grid-template-columns: 1fr !important; }
+
+  .mali-table-wrap    { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+
+  .mali-nw-value      { font-size: 32px !important; }
+
+  .mali-goal-cards    { grid-template-columns: 1fr !important; }
+
+  .mali-opp-grid      { grid-template-columns: 1fr !important; }
+
+  .mali-scenario-grid { grid-template-columns: 1fr !important; }
+
+  .mali-milestones-grid { grid-template-columns: 1fr !important; }
+
+  .mali-spending-grid { grid-template-columns: 1fr !important; }
+
+  .mali-filter-bar    { flex-wrap: wrap !important; gap: 10px !important; }
+
+  .mali-filter-divider { display: none !important; }
+
+  .mali-sacco-grid    { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 480px) {
+  .mali-metric-grid   { grid-template-columns: 1fr !important; }
+  .mali-nw-value      { font-size: 28px !important; }
+  .mali-sacco-grid    { grid-template-columns: 1fr !important; }
 }

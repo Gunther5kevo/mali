@@ -12,7 +12,7 @@ export default function CryptoPage() {
   return (
     <>
       <Topbar title="Crypto Portfolio" subtitle="Digital assets · Binance" />
-      <div style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
+      <div className="mali-page-content" style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
 
         {/* Summary banner */}
         <div

@@ -28,15 +28,23 @@ export default function NetWorthBanner({ summary }: NetWorthBannerProps) {
       {/* Decorative circles */}
       <div
         style={{
-          position: "absolute", top: -40, right: -40,
-          width: 220, height: 220, borderRadius: "50%",
+          position: "absolute",
+          top: -40,
+          right: -40,
+          width: 220,
+          height: 220,
+          borderRadius: "50%",
           border: "1px solid rgba(255,255,255,0.05)",
         }}
       />
       <div
         style={{
-          position: "absolute", bottom: -80, right: 60,
-          width: 300, height: 300, borderRadius: "50%",
+          position: "absolute",
+          bottom: -80,
+          right: 60,
+          width: 300,
+          height: 300,
+          borderRadius: "50%",
           border: "1px solid rgba(255,255,255,0.03)",
         }}
       />
@@ -45,14 +53,18 @@ export default function NetWorthBanner({ summary }: NetWorthBannerProps) {
       <div style={{ position: "relative", zIndex: 1 }}>
         <div
           style={{
-            fontSize: 11, fontWeight: 500, letterSpacing: "1.5px",
-            textTransform: "uppercase", color: "rgba(255,255,255,0.5)",
+            fontSize: 11,
+            fontWeight: 500,
+            letterSpacing: "1.5px",
+            textTransform: "uppercase",
+            color: "rgba(255,255,255,0.5)",
             marginBottom: 8,
           }}
         >
           Total Net Worth
         </div>
         <div
+          className="mali-nw-value"
           style={{
             fontFamily: "var(--font-display)",
             fontSize: 44,
@@ -79,8 +91,8 @@ export default function NetWorthBanner({ summary }: NetWorthBannerProps) {
             color: "#7ee8a2",
           }}
         >
-          <TrendingUp size={13} />
-          +{formatKES(summary.netWorthChange, true)} this year ({formatPercent(summary.netWorthChangePercent, true)})
+          <TrendingUp size={13} />+{formatKES(summary.netWorthChange, true)}{" "}
+          this year ({formatPercent(summary.netWorthChangePercent, true)})
         </div>
 
         {/* Health Score */}
@@ -108,14 +120,22 @@ export default function NetWorthBanner({ summary }: NetWorthBannerProps) {
             {summary.healthScore}
           </span>
           <div>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginBottom: 4 }}>
+            <div
+              style={{
+                fontSize: 12,
+                color: "rgba(255,255,255,0.6)",
+                marginBottom: 4,
+              }}
+            >
               Financial Health Score
             </div>
             <div
               style={{
-                width: 80, height: 4,
+                width: 80,
+                height: 4,
                 background: "rgba(255,255,255,0.15)",
-                borderRadius: 2, overflow: "hidden",
+                borderRadius: 2,
+                overflow: "hidden",
               }}
             >
               <div
@@ -133,6 +153,7 @@ export default function NetWorthBanner({ summary }: NetWorthBannerProps) {
 
       {/* Right: Key Figures */}
       <div
+        className="mali-banner-stats"
         style={{
           display: "flex",
           gap: 40,
@@ -162,11 +183,21 @@ export default function NetWorthBanner({ summary }: NetWorthBannerProps) {
           },
         ].map((stat) => (
           <div key={stat.label} style={{ textAlign: "right" }}>
-            <div style={{ fontSize: 11, color: "rgba(255,255,255,0.45)", marginBottom: 4 }}>
+            <div
+              style={{
+                fontSize: 11,
+                color: "rgba(255,255,255,0.45)",
+                marginBottom: 4,
+              }}
+            >
               {stat.label}
             </div>
-            <div style={{ fontSize: 20, fontWeight: 500, color: "#fff" }}>{stat.value}</div>
-            <div style={{ fontSize: 11, color: stat.subColor, marginTop: 2 }}>{stat.sub}</div>
+            <div style={{ fontSize: 20, fontWeight: 500, color: "#fff" }}>
+              {stat.value}
+            </div>
+            <div style={{ fontSize: 11, color: stat.subColor, marginTop: 2 }}>
+              {stat.sub}
+            </div>
           </div>
         ))}
       </div>

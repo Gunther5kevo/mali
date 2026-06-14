@@ -17,7 +17,6 @@ const typeConfig: Record<AccountType, { label: string; icon: any; color: string;
 export default function AccountsBanner() {
   const total = accounts.reduce((s, a) => s + a.balance, 0);
 
-  // Group balances by type for the breakdown bar
   const grouped = accounts.reduce<Record<string, number>>((acc, a) => {
     acc[a.type] = (acc[a.type] ?? 0) + a.balance;
     return acc;
@@ -28,24 +27,31 @@ export default function AccountsBanner() {
       style={{
         background: "var(--mali-emerald)",
         borderRadius: 16,
-        padding: "28px 32px",
+        padding: "24px 20px",
         marginBottom: 20,
         position: "relative",
         overflow: "hidden",
       }}
+      className="mali-accounts-banner"
     >
       {/* Rings */}
       <div style={{ position: "absolute", top: -50, right: -50, width: 240, height: 240, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.05)" }} />
       <div style={{ position: "absolute", bottom: -80, right: 60, width: 320, height: 320, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.03)" }} />
 
-      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", position: "relative", zIndex: 1 }}>
+      <div
+        className="mali-accounts-banner-inner"
+        style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", position: "relative", zIndex: 1, gap: 24 }}
+      >
 
         {/* Left */}
-        <div>
+        <div style={{ minWidth: 0, flex: 1 }}>
           <div style={{ fontSize: 11, fontWeight: 500, letterSpacing: "1.5px", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: 8 }}>
             Total Cash & Liquid Assets
           </div>
-          <div style={{ fontFamily: "var(--font-display)", fontSize: 44, fontWeight: 500, color: "#fff", letterSpacing: "-1px", lineHeight: 1 }}>
+          <div
+            className="mali-total-amount"
+            style={{ fontFamily: "var(--font-display)", fontSize: 44, fontWeight: 500, color: "#fff", letterSpacing: "-1px", lineHeight: 1 }}
+          >
             {formatKES(total)}
           </div>
           <div style={{ fontSize: 12, color: "rgba(255,255,255,0.45)", marginTop: 8 }}>
@@ -55,7 +61,10 @@ export default function AccountsBanner() {
           {/* Breakdown bar */}
           <div style={{ marginTop: 20 }}>
             <div style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", marginBottom: 8 }}>Breakdown by account type</div>
-            <div style={{ display: "flex", height: 6, borderRadius: 3, overflow: "hidden", width: 380, gap: 1 }}>
+            <div
+              className="mali-breakdown-bar"
+              style={{ display: "flex", height: 6, borderRadius: 3, overflow: "hidden", width: "100%", maxWidth: 380, gap: 1 }}
+            >
               {Object.entries(grouped).map(([type, bal]) => (
                 <div
                   key={type}
@@ -82,7 +91,7 @@ export default function AccountsBanner() {
         </div>
 
         {/* Right — per-account cards */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        <div className="mali-account-cards" style={{ display: "flex", flexDirection: "column", gap: 8, flexShrink: 0 }}>
           {accounts.map((acc) => {
             const cfg = typeConfig[acc.type];
             const Icon = cfg.icon;
@@ -102,17 +111,41 @@ export default function AccountsBanner() {
                 <div style={{ width: 30, height: 30, borderRadius: 8, background: "rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   <Icon size={14} color="rgba(255,255,255,0.8)" />
                 </div>
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: 12, fontWeight: 500, color: "#fff" }}>{acc.name}</div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: 12, fontWeight: 500, color: "#fff", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{acc.name}</div>
                   <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)" }}>{acc.institution}</div>
                 </div>
-                <div style={{ fontSize: 13, fontWeight: 500, color: "#fff" }}>{formatKES(acc.balance, true)}</div>
+                <div style={{ fontSize: 13, fontWeight: 500, color: "#fff", flexShrink: 0 }}>{formatKES(acc.balance, true)}</div>
               </div>
             );
           })}
         </div>
 
       </div>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .mali-accounts-banner {
+            padding: 20px 16px !important;
+          }
+          .mali-accounts-banner-inner {
+            flex-direction: column;
+          }
+          .mali-total-amount {
+            font-size: 32px !important;
+          }
+          .mali-account-cards {
+            width: 100%;
+          }
+          .mali-account-cards > div {
+            min-width: 0 !important;
+            width: 100%;
+          }
+          .mali-breakdown-bar {
+            max-width: 100% !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

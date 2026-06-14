@@ -11,7 +11,7 @@ export default function SpendingPage() {
   return (
     <>
       <Topbar title="Spending" subtitle="Where your money goes · June 2026" />
-      <div style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
+      <div className="mali-page-content" style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
 
         {/* Summary strip */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginBottom: 20 }}>

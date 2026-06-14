@@ -32,7 +32,7 @@ export default function InvestmentsPage() {
         <CryptoPanel />
 
         {/* MMF + SACCO – side by side */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+        <div className="mali-spending-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
           <MMFPanel />
           <SACCOPanel />
         </div>

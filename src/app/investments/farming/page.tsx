@@ -12,7 +12,7 @@ export default function FarmingPage() {
   return (
     <>
       <Topbar title="Farming Projects" subtitle="Agricultural investments & ROI tracking" />
-      <div style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
+      <div className="mali-page-content" style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
 
         {/* Summary banner */}
         <div
